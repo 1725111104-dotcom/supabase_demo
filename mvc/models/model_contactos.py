@@ -13,8 +13,7 @@ class ModelContactos:
                 os.environ.get("SUPABASE_KEY" , "")
             )
         except Exception as error:
-            print(f"ERROR 100
-            : {error.args[0]}")
+            print(f"ERROR 100: {error.args[0]}")
 
     #Devuelve todos los contactos de la tabla contactos
     def obtenerContactos(self):
