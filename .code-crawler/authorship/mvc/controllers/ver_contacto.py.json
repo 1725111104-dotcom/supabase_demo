@@ -69,12 +69,12 @@
     },
     {
       "line": 3,
-      "author": "ai",
+      "author": "mixed",
       "confidence": 0.8999999999999999,
       "aiEdits": 1,
-      "humanEdits": 0,
-      "lastEditType": "ai",
-      "lastEditTimestamp": 1794234352811,
+      "humanEdits": 2,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1794238128227,
       "signals": {
         "typingRhythm": 0.5,
         "editSize": 0.95,
@@ -378,11 +378,11 @@
   ],
   "summary": {
     "totalLines": 17,
-    "aiLines": 5,
+    "aiLines": 4,
     "humanLines": 12,
-    "mixedLines": 0,
-    "aiPercentage": 29,
+    "mixedLines": 1,
+    "aiPercentage": 24,
     "humanPercentage": 71
   },
-  "lastUpdated": 1794235362160
+  "lastUpdated": 1794238129464
 }

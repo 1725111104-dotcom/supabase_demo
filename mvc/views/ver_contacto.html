@@ -1,15 +1,21 @@
 $def with(contacto)
 
-<form name="contacto" method="GET" action="/contactos">
-    <label for="nombre">Nombre</label>
-    <!-- Se le pone el 0 ya que es la posición del registro en el array (como viene en corchetes significa que es un array)-->
-    <input type="text" name="nombre" id="nombre" value="$contacto[0]['nombre']"><br>
+<!-- Este if verifica si el id que recibe es válido, sino muestra el mensaje de Contacto no encontrado ya que aparece el array vacio []-->
+$if contacto != []:
+    <form name="contacto" method="GET" action="/contactos">
+        <label for="nombre">Nombre</label>
+        <!-- Se le pone el 0 ya que es la posición del registro en el array (como viene en corchetes significa que es un array)-->
+        <input type="text" name="nombre" id="nombre" value="$contacto[0]['nombre']" readonly><br>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" value="$contacto[0]['email']"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="$contacto[0]['email']" readonly><br>
 
-    <label for="telefono">Teléfono</label>
-    <input type="tel" name="telefono" id="telefono" value="$contacto[0]['telefono']"><br>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" value="$contacto[0]['telefono']" readonly><br>
 
-    <button type="button" onclick="location.href='/contactos';" name="regresar" id="regresar">Regresar</button>
-</form>
+        <button type="button" onclick="location.href='/contactos';" name="regresar" id="regresar">Regresar</button>
+    </form>
+
+$else:
+    <h2>Contacto no encontrado</h2>
+    <a href="/contactos">Regresar</a>
