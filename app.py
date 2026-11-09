@@ -1,6 +1,8 @@
 import web
 from mvc.controllers.index import Index
 from mvc.controllers.contactos import Contactos
+from mvc.controllers.insertar_contacto import InsertarContacto
+from mvc.controllers.ver_contacto import VerContacto
 
 #Evita que nos muestre la página de error
 web.config.debug = False
@@ -11,6 +13,9 @@ urls = (
     '/', 'Index',
     '/contactos', 'Contactos',
     #**Otra forma de importar ('/contactos', 'mvc.controllers.contactos.Contactos',)
+    '/insertar_contacto', 'InsertarContacto',
+    '/ver_contacto/(.*)', 'VerContacto'
+    # Con /(.*) Ayuda a poder recibir los valores de los ID
 )
 app = web.application(urls, globals())
 

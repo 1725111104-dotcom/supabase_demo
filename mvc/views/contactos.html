@@ -1,10 +1,12 @@
 $def with(datos)
 <!--Esta línea le avisa al motor de plantillas de web.py que este archivo HTML va a recibir una variable 
-desde Python llamada datos-->
+desde Python llamada datos (datos es un diccionario)-->
 <h1>Contactos</h1>
 <!-- Ejemplo de html usando la variable a-->
 $for a in datos:
     $a['nombre']
+
+<a href="/insertar_contacto">Nuevo contacto</a>
 
 <table>
     <thead>
@@ -13,6 +15,9 @@ $for a in datos:
             <th>Nombre</th>
             <th>Teléfono</th>
             <th>Email</th>
+            <th>Ver</th>
+            <th>Actualizar</th>
+            <th>Borrar</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +29,11 @@ $for a in datos:
                 <td>$a['nombre']</td>
                 <td>$a['telefono']</td>
                 <td>$a['email']</td>
+                <td><a href="/ver_contacto/${a['id_contacto']}">Ver</a></td>
+                <td><a href="/actualizar_contacto/${a['id_contacto']}">Actualizar</a></td>
+                <td><a href="/borrar_contacto/${a['id_contacto']}">Borrar</a></td>
+            </tr>
+    </tbody>
             </tr>
     </tbody>
 </table>
