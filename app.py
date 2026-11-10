@@ -4,6 +4,7 @@ from mvc.controllers.contactos import Contactos
 from mvc.controllers.insertar_contacto import InsertarContacto
 from mvc.controllers.ver_contacto import VerContacto
 from mvc.controllers.borrar_contacto import BorrarContacto
+from mvc.controllers.actualizar_contacto import ActualizarContacto
 
 #Evita que nos muestre la página de error
 web.config.debug = False
@@ -17,7 +18,7 @@ urls = (
     '/insertar_contacto', 'InsertarContacto',
     '/ver_contacto/(.*)', 'VerContacto',
     # Con /(.*) Ayuda a poder recibir los valores de los ID
-    '/borrar_contacto/(.*)', 'BorrarContacto'
+    '/borrar_contacto/(.*)', 'BorrarContacto',
     '/actualizar_contacto/(.*)', 'ActualizarContacto'
 )
 app = web.application(urls, globals())
