@@ -26,3 +26,4 @@
 2026-11-16 16:45:22 [INFO] httpx: HTTP Request: GET https://ghdkjnlauujhfhxznszc.supabase.co/rest/v1/contactos?select=%2A "HTTP/2 200 OK"
 2026-11-16 16:45:26 [INFO] httpx: HTTP Request: GET https://ghdkjnlauujhfhxznszc.supabase.co/rest/v1/contactos?select=%2A&id_contacto=eq.3 "HTTP/2 200 OK"
 2026-11-16 16:46:58 [INFO] httpx: HTTP Request: GET https://ghdkjnlauujhfhxznszc.supabase.co/rest/v1/contactos?select=%2A "HTTP/2 200 OK"
+2026-11-16 16:48:20 [INFO] httpx: HTTP Request: GET https://ghdkjnlauujhfhxznszc.supabase.co/rest/v1/contactos?select=%2A "HTTP/2 200 OK"
