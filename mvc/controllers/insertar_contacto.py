@@ -38,4 +38,3 @@ class InsertarContacto:
             <a href='/contactos'>Regresar</a>
         """
         return html
-
