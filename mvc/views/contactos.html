@@ -11,6 +11,7 @@ $for a in datos:
 <table>
     <thead>
         <tr>
+            <th>Foto</th>
             <th>Nombre</th>
             <th>Teléfono</th>
             <th>Email</th>
@@ -24,6 +25,7 @@ $for a in datos:
         <!--Esta es una línea de código Python ejecutada por web.py. Es un ciclo que lee los contactos uno por 
         uno. En cada vuelta del ciclo, el contacto actual se guarda en la variable dinámica a-->
             <tr>
+                <td><img src="static/fotos/$a['foto']" height="50px" width="50px"></td>
                 <td>$a['nombre']</td>
                 <td>$a['email']</td>
                 <td>$a['telefono']</td>

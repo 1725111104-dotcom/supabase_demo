@@ -85,12 +85,13 @@ class ModelContactos:
 
     #Inserta un nuevo contacto en la tabla de contactos
     #El try y el except sirve para ver errores de manera más facil. Podemos ponerle cualquier número pero conviene hacerlos desde el 100
-    def insertarContacto(self, nombre:str,  telefono:str, email:str):
+    def insertarContacto(self, nombre:str,  telefono:str, email:str, foto:str):
         try:
             nuevo_contacto = {
             "nombre": nombre,
             "telefono": telefono,
-            "email": email
+            "email": email,
+            "foto": foto
             }
             response = self.supabase.table("contactos").insert(nuevo_contacto).execute()
             return response.data
@@ -111,7 +112,7 @@ class ModelContactos:
             print(f"ERROR 104: {error}")
 
     #Editar la información de un contacto
-    def actualizarContacto(self, id_contacto:str, nombre:str, telefono:str, email:str):
+    def actualizarContacto(self, id_contacto:str, nombre:str, telefono:str, email:str, foto:str):
         try:
             id = self.validar_hash(id_contacto)
             if id is None:
@@ -119,7 +120,8 @@ class ModelContactos:
             editar_contacto = {
                 "nombre": nombre,
                 "telefono": telefono,
-                "email": email
+                "email": email,
+                "foto": foto
             }
             response = self.supabase.table("contactos").update(editar_contacto).eq("id_contacto", id).execute()
             return response.data
@@ -131,6 +133,6 @@ if __name__ == "__main__":
     model_contactos = ModelContactos()
     #print(model_contactos.obtenerContactos())
     #print(model_contactos.buscarContacto(2))
-    print(model_contactos.insertarContacto("Emi", "emi@email.com", "1414141414"))
+    print(model_contactos.insertarContacto("Emi", "emi@email.com", "1414141414", "foto.jpg"))
     #print(model_contactos.borrarContacto(1))
-    #print(model_contactos.actualizarContacto(2, "Ramiro", "rami@email.com", "121212121212"))
+    #print(model_contactos.actualizarContacto(2, "Ramiro", "rami@email.com", "121212121212", "foto.jpg"))
